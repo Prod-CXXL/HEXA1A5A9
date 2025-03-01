@@ -26,11 +26,27 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "/Jekyll-Test" # the subpath of your site, e.g. /blog
 url: "https://prod-cxxl.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: Prod.CXXL
+github_username:  Prod. CXXL
+
+# Fields minima uses, but are not defaulted with the jekyll new command.
+# Author is the default for posts, the Atom feed, and is used in the footer.
+author: CXXL
+
+# New fields not defaulted by jekyll-new with the minima theme I
+# Add a copyright. A copyright symbol and year will be added automatically
+# copyright: Company Name, Inc.
+copyright: "HEXA1A5A9 LLC"
+
+# title-logo is a new field that, when used, displays a logo
+# instead of custom text. Ideally, image is 50px high and takes up
+# minimal horizontal space. Tested with a new root "images" folder e.g .:
+# title-logo: /images/my-logo.png (or JPG, etc.)
+title-logo: /images/LogoBG.png
 
 # Build settings
-theme: minima
+# Removed minima, as it is now a regular theme.
+# theme: minima
 plugins:
   - jekyll-feed
 
