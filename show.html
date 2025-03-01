@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/70f6532a43.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>HEXA1A5A9 - SHOW</title>
+</head>
+<body class="show">
+    <!-- Top bar section -->
+    <!--#include virtual="partials/header.html" -->
+
+    <!-- Main container -->
+    <div class="container">
+        <header>
+            <h1>SHOW</h1>
+            <p>Show, performances for the mind, demonstrating art with imagination combined with determination 
+                and commitment to finding the perfect way to present it all signed with the ability to give 
+                sight to the blind, speak to the deaf, give life to the dead, and tell a story with clefs, 
+                from pirouettes and silhouettes to marionettes and Corvettes, from a musical display of violins 
+                and clarinets to your favorite actress on a television set, they all are beautiful, so take a 
+                peek that you won't regret. It may only leave you with a shortness of breath that you will not 
+                forget.</p>
+        </header>
+
+        <hr class="divider">
+        
+        <section class="stream">
+            <!-- Add a placeholder for the Twitch embed -->
+            <div id="twitch-embed"></div>
+
+            <!-- Load the Twitch embed JavaScript file -->
+            <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+            <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+            <script type="text/javascript">
+                new Twitch.Embed("twitch-embed", {
+                    width: "100%",
+                    height: "500px",
+                    channel: "cxxlontwitch",
+                });
+            </script>
+        </section>
+
+    <!-- Footer section -->
+    <!--#include virtual="partials/footer.html" -->
+
+    <!-- Load the JavaScript -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
