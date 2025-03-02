@@ -19,3 +19,5 @@ plugins:
 feed:
   icon: /images/LogoBG.png
   logo: /images/LogoFull.png
+collections:
+ - products
