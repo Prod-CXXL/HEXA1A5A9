@@ -1,11 +1,11 @@
 # Site Settings
 title: Jekyll Test
-author: Prod. CXXL
+author: CXXL
 email: prod.cxxl@gmail.com
 description: >
-  A guide to getting started with Jekyll.
-baseurl: ''
-url: 'http://localhost:4000'
+  A test to getting started with Jekyll.
+baseurl: 'Jekyll-Test/'
+url: 'https://prod-cxxl.github.io'
 twitter_username: Prod. CXXL
 github_username: Prod. CXXL
 # Build Settings
@@ -14,3 +14,7 @@ sass:
 include: ['_pages']
 kramdown:
   input: GFM
+plugins:  - jekyll-feed
+feed:
+  icon: /images/LogoBG.png
+  logo: /images/LogoFull.png
