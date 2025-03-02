@@ -1,38 +1,13 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-            {%- if site.copyright -%}
-            <li>&copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}</li>
-            {%- endif -%}
-        </ul>
+    <!-- Footer with social media links -->
+    <footer>
+      <div class="social-media">
+          <a href="https://open.spotify.com/artist/1oWfjjRo2dwQW1rz4BtVHu?si=pqaSTexzT3eOTiqjbOjtHw" target="_blank"><i class="fab fa-spotify"></i></a>
+          <a href="https://instagram.com/hexa1a5a9" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://soundcloud.com/prod-cxxl" target="_blank"><i class="fab fa-soundcloud"></i></a>
+          <a href="https://www.twitch.tv/cxxlontwitch" target="_blank"><img src="images/LogoFull.JPG"></img></a>
+          <a href="https://twitter.com/ProdCxxl" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.tiktok.com/@prod.cxxl" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.snapchat.com/add/prod.cxxl/" target="_blank"><i class="fab fa-snapchat"></i></a>
       </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
+      <p>© 2024 Designed by CXXL - '22</p>
+  </footer>

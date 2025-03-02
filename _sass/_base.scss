@@ -1,0 +1,18 @@
+$content-width: 1000px;
+$main: #a1a5a9;
+$font-style: 'Oswald', sans-serif;
+$font-color: #000000;
+$link-color: #425469;
+$link-hover-color: $main;
+$heading-font: 'Oswald', sans-serif;
+$heading-font-color: #000000;
+$light: #e7edf4;
+$header: #1d1425;
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

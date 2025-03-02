@@ -8,10 +8,6 @@ function loadHTML(file, elementId) {
         .catch(error => console.error('Error loading HTML:', error));
 }
 
-// Load header and footer
-loadHTML('partials/header.html', 'header-placeholder');
-loadHTML('partials/footer.html', 'footer-placeholder');
-
 const menuButton = document.getElementById('menuButton');
 
 // Menu button
