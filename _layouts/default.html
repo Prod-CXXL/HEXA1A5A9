@@ -4,13 +4,18 @@
   {% include head.html %}
 
   <body>
-    {% include header.html %}
-    <main>
-      {{ content }}
+      {% include header.html %}
+    <main class="main">
+        {{ content }}
     </main>
-    {% include footer.html %}
+      <a href="http://www.google.com" class="material-icons float-btn">add</a>
+      {% include footer.html %}
   </body>
 
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
+    <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"></script>
+    <div id="snipcart" data-api-key="N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4" hidden></div>
+    
   <!-- Load the JavaScript -->
   <script src="js/scripts.js"></script>
 

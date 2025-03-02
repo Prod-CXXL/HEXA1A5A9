@@ -19,6 +19,10 @@ body {
   margin: 40px auto; /* Space for the fixed top bar and horizontal spacing*/
 }
 
+.main {
+  margin-top: 56px;
+}
+
 /* Default styles for headers */
 .tune header, .rhyme header, .prose header, .design header, .show header, .connect header {
   display: flex;
@@ -256,13 +260,22 @@ footer {
   transition: color 0.3s;
 }
 
-img {
-  width: 25px;
-}
-
 footer p {
   font-size: 10px;
   font-family: Oswald, sans-serif;
+}
+
+.material-icons.float-btn {
+  width: 80px;
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 40px;
 }
 
 /* ======================== HOME ======================== */
@@ -660,6 +673,75 @@ hr {
 }
 
 /* Container for social links */
+/* ====================== BLOG ======================== */
 
+/* ====================== SHOP ======================== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; // Add this line
+  margin: 0 auto; // Add this line
+  max-width: 1400px; // Add this line - adjust value as needed
+  place-items: center; 
+}
 
-/* ====================== BULLETIN ======================== */
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "image info";
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 18.025px 20px rgba(0,0,0,.25);
+  margin: 0 auto; // Add this line
+  width: 100%; /* Make sure product takes full width of its grid cell */
+  max-width: 900px; /* Maximum width for each product */
+}
+
+/* Add media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    max-width: 100%;
+  }
+}
+
+.product__information {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buy-button {
+  color: #fff;
+  background-color: #afafaf;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  transition: .2s transform ease-in-out,.2s box-shadow ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.2)
+}
+
+.buy-button:hover {
+  transform: translate(0px,-4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+}
+
+.product__image {
+  grid-area: image;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 18.025px 43.775px rgba(0,0,0,.25)
+}
+
+/* ==================== BULLETIN ====================== */

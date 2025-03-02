@@ -1,7 +1,7 @@
 ---
 identifier: jekyll-idea-1
 name: Concept
-price: 9.99
+price: 0.01
 image: /images/concept.jpg
 ---
 
