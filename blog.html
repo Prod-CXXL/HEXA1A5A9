@@ -3,10 +3,26 @@ title: BLOG
 layout: default
 ---
 
-<h4>blog</h4>
-{% for post in site.posts %}
+<style type="text/css" media="screen">
+	.container {
+		margin-top: 20px;
+	  	max-width: 600px;
+	  	text-align: center;
+	}
+	h1 {
+	  margin: 30px 0;
+	  font-size: 4em;
+	  line-height: 1;
+	  letter-spacing: -1px;
+	}
+</style>
+
+<div class="container">
+	<h1>BLOG</h1>
+	{% for post in site.posts %}
 		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
 		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-{% endfor %}
+	{% endfor %}
 
-<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>

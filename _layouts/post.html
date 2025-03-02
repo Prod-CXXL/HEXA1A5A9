@@ -1,11 +1,27 @@
 ---
 layout: default
 ---
+<style type="text/css" media="screen">
+	.container {
+		margin-top: 20px;
+    padding: 20px;
+	  max-width: 600px;
+	  text-align: center;
+	}
+	h1 {
+	  margin: 30px;
+	  font-size: 4em;
+	  line-height: 1;
+	  letter-spacing: -1px;
+	}
+</style>
 
-<h2>{{ page.title }}</h2>
-<time
-  >{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
-  page.meta %} • {{ page.meta }}{% endif %}</time
->
+<div class="container">
+  <h2>{{ page.title }}</h2>
+  <time>
+  {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if
+  page.meta %} • {{ page.meta }}{% endif %}
+  </time>
 
-{{ content }}
+  {{ content }}
+</div>

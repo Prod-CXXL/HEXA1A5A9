@@ -4,7 +4,7 @@ author: CXXL
 email: prod.cxxl@gmail.com
 description: >
   A test to getting started with Jekyll.
-baseurl: 'Jekyll-Test/'
+baseurl: '/Jekyll-Test'
 url: 'https://prod-cxxl.github.io'
 twitter_username: Prod. CXXL
 github_username: Prod. CXXL
@@ -14,7 +14,8 @@ sass:
 include: ['_pages']
 kramdown:
   input: GFM
-plugins:  - jekyll-feed
+plugins: 
+  - jekyll-feed
 feed:
   icon: /images/LogoBG.png
   logo: /images/LogoFull.png
