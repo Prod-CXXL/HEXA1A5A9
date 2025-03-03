@@ -52,3 +52,60 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const topBar = document.querySelector('.top-bar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            topBar.classList.add('scrolled');
+        } else {
+            topBar.classList.remove('scrolled');
+        }
+    });
+});
+
+async function getLastUpdate() {
+    try {
+        // Replace with your GitHub repository details
+        const username = 'PROD-CXXL';
+        const repo = 'Jekyll-Test';
+        const response = await fetch(`https://api.github.com/repos/${username}/${repo}/commits`);
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const commits = await response.json();
+        const lastUpdate = new Date(commits[0].commit.committer.date);
+        
+        const formattedDate = lastUpdate.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+        
+        const formattedTime = lastUpdate.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        const author = commits[0].commit.author.name;
+        
+        const updateText = document.querySelector('.update-text');
+        updateText.innerHTML = `Last Updated ${formattedDate} @ ${formattedTime} <span class="separator">|</span> <span class="author">${author}</span>`;
+    } catch (error) {
+        console.error('Error fetching GitHub data:', error);
+        document.querySelector('.update-text').textContent = 'Update info unavailable';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getLastUpdate);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const floatBtn = document.querySelector('.material-symbols.float-btn');
+    
+    floatBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+});

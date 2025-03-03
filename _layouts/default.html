@@ -8,7 +8,12 @@
     <main>
         {{ content }}
     </main>
-      <a href="http://www.google.com" class="material-icons float-btn">add</a>
+    <div class="float-btn-container">
+      <button class="material-symbols float-btn" id="updateBtn">
+        <span class="material-symbols-outlined">info</span>
+        <span class="update-text">Loading...</span>
+      </button>
+    </div>
       {% include footer.html %}
   </body>
 

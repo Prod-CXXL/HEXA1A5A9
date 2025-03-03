@@ -18,6 +18,6 @@ plugins:
   - jekyll-feed
 feed:
   icon: /images/LogoBG.png
-  logo: /images/LogoFull.png
+  logo: /images/LogoFull.JPG
 collections:
  - products
