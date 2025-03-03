@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1400px;
+  max-width: 1600px;
 }
 
 .container {    
@@ -764,7 +764,7 @@ hr {
 /* ====================== SHOP ======================== */
 .cart_btn {
   vertical-align: middle;
-  transform: translateY(-3px);
+  transform: translateY(-1px);
 }
 
 // If you have a container for the cart button and text, you can also add:
@@ -841,5 +841,32 @@ hr {
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 18.025px 43.775px rgba(0,0,0,.25)
+}
+
+/* Add this media query for small screens */
+@media screen and (max-width: 450px) {
+  .product {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "image"
+      "info";
+  }
+  
+  .product__image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .product__information {
+    padding: 10px 0;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+    min-width: unset;
+    padding: 10px;
+  }
 }
 /* ==================== BULLETIN ====================== */
