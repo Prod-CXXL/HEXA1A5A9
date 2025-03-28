@@ -5,7 +5,8 @@
 
   <body>
       {% include header.html %}
-    <main>
+    <div class="overlay"></div>
+    <main class="main-content">
         {{ content }}
     </main>
     <div class="float-btn-container">
@@ -22,6 +23,6 @@
     <div id="snipcart" data-api-key="N2ZjMDA5YWEtYTExOS00YjI0LWJmZjEtMDBhYTk1YmJmZDUyNjM4NzY1MjYzOTExNzAyNzI4" hidden></div>
     
   <!-- Load the JavaScript -->
-  <script src="js/scripts.js"></script>
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
 
 </html>

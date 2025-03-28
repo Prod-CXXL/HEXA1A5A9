@@ -1,4 +1,11 @@
 /* General Styles */
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #a1a5a9;
   font-family: Oswald, sans-serif;
@@ -161,19 +168,20 @@ html, body {
 
 /* Side Menu Styles */
 .side-menu {
-  height: 100%;
+  height: 100vh;
   width: 0;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(161, 165, 169, 0.8); /* Changed from solid #a1a5a9 to semi-transparent */
+  background-color: rgba(161, 165, 169, 0.8);
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); /* For Safari support */
-  overflow-x: hidden;
-  transition: 0.5s;
+  -webkit-backdrop-filter: blur(5px);
+  overflow: hidden; /* Change from overflow-x to just overflow */
+  transition: all 0.5s ease;
   padding-top: 60px;
-  color: white;
-  z-index: 1000;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
 }
 
 .side-menu .close-menu {
@@ -192,9 +200,11 @@ html, body {
 }
 
 .side-menu .menu-links {
-  list-style: none;
-  padding: 0;
-  text-align: left;
+   padding: 0;
+   margin: 0;
+   text-align: left;
+   flex: 1;
+   overflow-y: auto; /* Only show scrollbar in the links section if needed */
 }
 
 .side-menu .menu-links li {
@@ -251,7 +261,7 @@ footer {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* For Safari support */
   text-align: center;
-  z-index: 1000; /* Add z-index to ensure footer stays on top */
+  z-index: 999; /* Add z-index to ensure footer stays on top */
 }
 
 footer p {
@@ -278,7 +288,12 @@ footer p {
   right: 20px;
   bottom: 70px;
   z-index: 1001;
-  
+  transition: bottom 0.5s ease; /* Add transition for smooth movement */
+}
+
+/* Add new class for when menu is open */
+.float-btn-container.menu-open {
+  bottom: 20px; /* Move to bottom when menu is open */
 }
 
 .material-symbols.float-btn {
@@ -818,9 +833,9 @@ hr {
 
 .buy-button {
   color: #fff;
-  background-color: #000;
+  background-color: black;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
@@ -828,12 +843,12 @@ hr {
   border: none;
   white-space: nowrap;
   transition: .2s transform ease-in-out,.2s box-shadow ease-in-out;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.2)
+  box-shadow: 0 0 0 rgba(62, 62, 62, 0.2)
 }
 
 .buy-button:hover {
-  transform: translate(0px,-4px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+          transform: translate(0px,-4px);
+  box-shadow: 0 4px 6px rgba(62, 62, 62, 0.2)
 }
 
 .product__image {
@@ -869,4 +884,101 @@ hr {
     padding: 10px;
   }
 }
+
+// Snipcart customization
+.snipcart-modal {
+  z-index: 9999 !important;
+}
+
+.snipcart-modal__container {
+  z-index: 10000 !important;
+}
+
+.snipcart-cart-header {
+  z-index: 10001 !important;
+}
+
+.snipcart-cart__content {
+  z-index: 10000 !important;
+}
+
+// Ensure overlay is behind cart but above other content
+.snipcart-overlay {
+  z-index: 9998 !important;
+}
+
+// Hide Snipcart elements but keep files
+.snipcart-checkout,
+#snipcart,
+.snipcart-modal,
+.snipcart-cart {
+    display: none !important;
+}
+
 /* ==================== BULLETIN ====================== */
+
+/* ==================== SEARCH ====================== */
+
+.search-page {
+    padding: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+
+    .search-container {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        input {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            
+            &:focus {
+                outline: none;
+                border-color: rgba(0,0,0,0.3);
+            }
+        }
+
+        button {
+            padding: 12px 24px;
+            background: none;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            cursor: pointer;
+            
+            &:hover {
+                background: rgba(0,0,0,0.05);
+            }
+        }
+    }
+
+    .search-results {
+        .result-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+
+            h3 {
+                margin: 0 0 0.5rem 0;
+                
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            p {
+                margin: 0;
+                color: #666;
+                font-size: 14px;
+            }
+        }
+    }
+}
