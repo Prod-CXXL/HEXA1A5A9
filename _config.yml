@@ -4,7 +4,7 @@ author: CXXL
 email: prod.cxxl@gmail.com
 description: >
   A test to getting started with Jekyll.
-baseurl: '/HEXA1A5A9'
+baseurl: ''
 url: 'https://hexa1a5a9.com'
 twitter_username: Prod. CXXL
 github_username: Prod. CXXL
@@ -23,4 +23,4 @@ collections:
  - products
 permalink: pretty
 exclude:
-  - shop.html
+ - shop.html
