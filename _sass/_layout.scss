@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Jim Nightshade';
+  src: url('fonts/JimNightshade.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #a1a5a9;
   font-family: Oswald, sans-serif;
@@ -489,6 +496,8 @@ footer p {
 .left-content {
   flex: 1;
   min-width: 300px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .right-content {
@@ -496,6 +505,23 @@ footer p {
   min-width: 300px;
   display: flex;
   justify-content: flex-end;
+}
+
+.soundcloud-embed {
+  width: 100%;
+  max-width: 300px;
+  height: 730px;
+  font-size: 10px; 
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  border: none;
+  margin: 0 20px;
 }
 
 .spotify-embed {
@@ -521,16 +547,12 @@ footer p {
       width: 90%; /* Increase width for better display */
       max-width: 400px; /* Add max-width for consistency */
       margin: 0 auto; /* Center the containers */
-      padding: 20px; /* Consistent padding for mobile */
-  }
-
-  .right-content {
       display: flex;
       justify-content: center; /* Center the spotify embed */
       align-items: center; /* Center vertically */
   }
 
-  .spotify-embed {
+  .spotify-embed .soundcloud-embed{
       max-width: 100%;
       height: 400px;
       border: none;
@@ -579,11 +601,7 @@ hr {
   gap: 0px; /* Space between items */
 }
 
-.special {
-  font-family: 'Jim Nightshade', cursive;
-  font-size: 20px; /* Adjust size as needed */
-  line-height: 1.4; /* Adjust line height as needed */
-}
+
 
 /* Style the poem title button */
 .poem-title {
@@ -598,6 +616,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 /* Style the arrow */
@@ -671,12 +690,27 @@ hr {
   }
 }
 
+.special {
+  font-family: 'Jim Nightshade', cursive;
+  font-size: 25px; /* Adjust size as needed */
+  line-height: 1.4; /* Adjust line height as needed */
+  font-weight: bold;
+
+  .poem p {
+    font-size: 20px; /* Adjust size as needed */
+    font-weight: normal;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 /* ======================== PROSE ======================== */
 
 /* ======================= DESIGN ======================== */
 
 /* ======================== SHOW ======================== */
-/* Stream section */
+
+/* Twitch section */
 .stream {
   width: 100%;
   max-width: 1000px; /* Adjust as needed */
@@ -722,58 +756,105 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+    .social-item {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        max-width: 400px; // Set a consistent max-width
+        margin: 0 auto; // Center the items
+        text-decoration: none;
+        color: inherit;
+        border-radius: 8px;
+        transition: all 0.4s ease;
+
+        &:hover {
+            
+            background: rgba(0,0,0,0.05);
+            box-shadow: 0 18.025px 20px rgba(0,0,0,0.25);
+            transform: translateY(-2px);
+        }
+
+        i {
+            font-size: 40px;
+            width: 40px; // Set fixed width for icons
+            text-align: center;
+        }
+
+        .social-text {
+            flex: 1;
+            p {
+                margin: 0 10px;
+                font-size: 24px;
+            }
+            span {
+                color: #666;
+                font-size: 16px;
+            }
+        }
+    }
 }
 
-/* Style for each social item */
-.social-item {
+div#instagram-feed {
+  padding: 0px 25px;
+}
+
+.instagram-placeholder {
+  width: 100%;
+  min-height: 300px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: inherit; /* Inherit text color */
-  padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  justify-content: center;
+  margin: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  .placeholder-content {
+      text-align: center;
+      color: #666;
+
+      span {
+          font-size: 48px;
+          margin-bottom: 10px;
+          display: block;
+      }
+
+      p {
+          margin: 0;
+          font-size: 16px;
+      }
+  }
 }
 
-/* Add hover effect for social items */
-.social-item:hover {
-  background-color: #ddd;
+#instagram-feed {
+  position: relative;
+  min-height: 300px;
 }
 
-/* Icon styling */
-.social-item i {
-  font-size: 32px;
-  margin-right: 20px;
-  color: #333;
+#curator-feed-default-feed-layout {
+  position: relative;
+  z-index: 2;
+  
+  &.loaded {
+      ~ .instagram-placeholder {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+      }
+  }
 }
 
-/* Text for social links */
-.social-text {
-  text-align: left;
-}
-
-.social-text p {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.social-text span {
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-/* Style for "more coming soon" text */
-.more-coming {
-  margin-top: 30px;
-  font-size: 16px;
-  font-weight: 400;
-  color: #000;
-}
-
-/* Container for social links */
 /* ====================== BLOG ======================== */
 
 /* ====================== SHOP ======================== */
@@ -885,6 +966,7 @@ hr {
   }
 }
 
+//Hiding the Custom Snipcart elements
 // Snipcart customization
 .snipcart-modal {
   z-index: 9999 !important;
@@ -927,7 +1009,7 @@ hr {
     .search-container {
         display: flex;
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 30px;
 
         input {
             flex: 1;
@@ -957,8 +1039,8 @@ hr {
 
     .search-results {
         .result-item {
-            padding: 1rem;
-            margin-bottom: 1rem;
+            padding: 20px;
+            margin-bottom: 20px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
 
             h3 {
