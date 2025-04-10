@@ -224,6 +224,7 @@ async function getLastUpdate() {
         console.error('Error fetching GitHub data:', error);
         document.querySelector('.update-text').textContent = 'Update info unavailable';
     }
+
 }
 
 document.addEventListener('DOMContentLoaded', getLastUpdate);

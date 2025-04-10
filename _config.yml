@@ -16,6 +16,7 @@ kramdown:
   input: GFM
 plugins: 
   - jekyll-feed
+  - jekyll-redirect-from
 feed:
   icon: /images/LogoBG.png
   logo: /images/LogoFull.JPG
