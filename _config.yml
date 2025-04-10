@@ -24,4 +24,4 @@ collections:
  - products
 permalink: pretty
 exclude:
- - shop.html
+# - shop.html

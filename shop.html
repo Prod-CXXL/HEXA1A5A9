@@ -1,7 +1,7 @@
 ---
 layout: default
+title: Shop
 permalink: /shop/
-redirect_to: https://merch.hexa1a5a9.com
 ---
 
 <!--
@@ -11,12 +11,13 @@ redirect_to: https://merch.hexa1a5a9.com
     {% endfor %}
 </div>
 -->
-<head>
-    <meta http-equiv="refresh" content="0; url=https://merch.hexa1a5a9.com">
-    <link rel="canonical" href="https://merch.hexa1a5a9.com" />
-    <script>window.location.href = "https://merch.hexa1a5a9.com";</script>
-</head>
-<body>
-    <h1>Redirecting to Shop...</h1>
-    <p>If you are not redirected automatically, please <a href="https://merch.hexa1a5a9.com">click here</a>.</p>
-</body>
+
+<div class="shop-redirect">
+    <h1>Welcome to the HEXA1A5A9 Shop</h1>
+    <p>Redirecting you to the new <a href="https://merch.hexa1a5a9.com">merch</a> store...</p>
+    <div class="loader"></div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', handleShopRedirect);
+</script>

@@ -133,8 +133,7 @@ async function performSearch(searchTerm) {
             '/HEXA1A5A9/prose/',
             '/HEXA1A5A9/design/',
             '/HEXA1A5A9/connect/',
-            '/HEXA1A5A9/blog/',
-            '/HEXA1A5A9/shop/'
+            '/HEXA1A5A9/blog/'
         ];
 
         const results = [];
@@ -224,6 +223,12 @@ async function getLastUpdate() {
         console.error('Error fetching GitHub data:', error);
         document.querySelector('.update-text').textContent = 'Update info unavailable';
     }
+
+    function handleShopRedirect() {
+        setTimeout(function() {
+            window.location.href = 'https://merch.hexa1a5a9.com';
+        }, 2000);
+    }    
 
 }
 
