@@ -282,6 +282,7 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll-feed (~> 0.12)
   jekyll-redirect-from (~> 0.16.0)
+  jekyll-sitemap
   json (>= 2.10.2)
   tzinfo (>= 1, < 3)
   tzinfo-data

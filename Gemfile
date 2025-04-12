@@ -36,3 +36,5 @@ gem "json", ">= 2.10.2"
 
 
 gem "jekyll-redirect-from", "~> 0.16.0"
+
+gem 'jekyll-sitemap'

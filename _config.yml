@@ -17,6 +17,7 @@ kramdown:
 plugins: 
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap
 feed:
   icon: /images/LogoBG.png
   logo: /images/LogoFull.JPG
